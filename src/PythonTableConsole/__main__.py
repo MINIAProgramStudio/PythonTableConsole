@@ -80,3 +80,29 @@ class PythonTableConsole:  # main class for creating and handling PythonTableCon
                     self.contains[ii], self.contains[ii + 1] = self.contains[ii + 1], self.contains[ii]
         self.transpose()
         self.__update()
+
+    def sort_by_column_with_skips(self, column_index,
+                       skip_rows=[], skip_columns = [], largest_at_the_top = True):  # sorts table by specified column. Skipped rows and columns remain stationary
+        if column_index in skip_columns:
+            raise Exception("Cannot sort skipped column")
+        remaining_columns = [i for i in range(self.width())]
+        remaining_rows = [i for i in range(self.height())]
+        for skip in skip_columns:
+            remaining_columns.pop(skip)
+        for skip in skip_rows:
+            remaining_rows.pop(skip)
+        contains = [self.contains[i] for i in remaining_columns]
+        for column in range(len(contains)):
+            contains[column] = [contains[column][i] for i in remaining_rows]
+
+        if largest_at_the_top:
+            for i in range(len(contains[0])):
+                for ii in range(len(contains[0])-1):
+                    if contains[column_index][ii] < contains[column_index][ii+1]:
+                        for column in range(len(contains)):
+                            contains[column][ii], contains[column][ii+1] = contains[column][ii+1], contains[column][ii]
+
+        for column in range(len(contains)):
+            for row in range(len(contains[column])):
+                self.contains[remaining_columns[column]][remaining_rows[row]] = contains[column][row]
+        self.update()

@@ -72,7 +72,7 @@ class PythonTableConsole:  # main class for creating and handling PythonTableCon
         self.__update()
 
     def sort_by_column(self, column_index,
-                       skip_n_rows=0):  # sorts table by specified column. MAY BE REMOVED IN FUTURE
+                       skip_n_rows=0):  # sorts table by specified column. MAY BE REMOVED IN THE FUTURE
         self.transpose()
         for i in range(skip_n_rows, self.width()):
             for ii in range(skip_n_rows, self.width() - 1):

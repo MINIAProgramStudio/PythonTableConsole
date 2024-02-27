@@ -7,9 +7,12 @@ Simple console-oriented handler for python two-dimensional lists (tables). Put y
  - Print your lists as tables to the console!
 ## Examples:
 #### Creating table from list:
+'''python
     import PythonTableConsole as PTC
     my_list = [['a', 'b', 'c'], [1, 2, 3], [7,4,3,2,0,10]]
-    Table = PTC.PythonTableConsole(my_list) # or PTC.PythonTableConsole([['a', 'b', 'c'], [1, 2, 3], [7,4,3,2,0,10]])
+    Table = PTC.PythonTableConsole(my_list)
+    # or PTC.PythonTableConsole([['a', 'b', 'c'], [1, 2, 3], [7,4,3,2,0,10]])
+'''python
 #### Printing table to the console:
     print(Table)
 #### Changing table:

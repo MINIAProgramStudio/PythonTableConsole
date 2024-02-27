@@ -26,7 +26,7 @@ Table.contains[0][0] = 'alpha'
 Table.width()  # returns number of columns
 Table.height()  # returns number of rows
 Table.transpose()  # transposes the Table: rows to columns, columns to rows
-Table.sort_by_column(column_index, skip_n_rows = 0)  # sorts all table (except first n rows) by specified column. MAY BE REMOVED IN THE FUTURE
-Table.sort_by_column_with_skips(column_index, skip_rows = [], skip_columns = [], largest_at_the_top = True)  # sorts all table (except specified rows and columns) by the specified column.
-Table.sort_by_row_with_skips(row_index, skip_rows = [], skip_columns = [], largest_at_the_top = True)  # sorts all table (except specified rows and columns) by the specified row.
+Table.sort_by_column(column_index, skip_n_rows = 0)  # sorts the table (except first n rows) by specified column. MAY BE REMOVED IN THE FUTURE
+Table.sort_by_column_with_skips(column_index, skip_rows = [], skip_columns = [], largest_at_the_top = True)  # sorts the table (except specified rows and columns) by the specified column.
+Table.sort_by_row_with_skips(row_index, skip_rows = [], skip_columns = [], largest_at_the_top = True)  # sorts the table (except specified rows and columns) by the specified row.
 ```

@@ -1,0 +1,30 @@
+# pyproject.toml
+
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "PythonTableConsole"
+version = "1.0.0"
+description = "Module for creating tables for console applications"
+readme = "README.md"
+authors = [{ name = "Misube", email = "mishataube2005@gmail.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["console", "table"]
+dependencies = []
+requires-python = ">=3.10"
+
+[project.optional-dependencies]
+dev = ["bumpver", "pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/MINIAProgramStudio/PythonTableConsole"
+
+[project.scripts]
+PythonTableConsole = "PythonTableConsole.__main__:main"

@@ -72,7 +72,7 @@ class PythonTableConsole:  # main class for creating and handling PythonTableCon
         self.__update()
 
     def sort_by_column(self, column_index,
-                       skip_n_rows=0):  # sorts table by specified column. To sort by row: transpose, sort_by_column, transpose.
+                       skip_n_rows=0):  # sorts table by specified column. MAY BE REMOVED IN FUTURE
         self.transpose()
         for i in range(skip_n_rows, self.width()):
             for ii in range(skip_n_rows, self.width() - 1):
@@ -117,8 +117,8 @@ class PythonTableConsole:  # main class for creating and handling PythonTableCon
         self.__update()
 
     def sort_by_row_with_skips(self, row_index,
-                                  skip_rows=[], skip_columns=[],
-                                  largest_at_the_top=True):  # sorts table by specified row. Skipped rows and columns remain stationary
+                               skip_rows=[], skip_columns=[],
+                               largest_at_the_top=True):  # sorts table by specified row. Skipped rows and columns remain stationary
 
         if row_index in skip_rows:
             raise Exception("Cannot sort skipped row")
@@ -136,7 +136,7 @@ class PythonTableConsole:  # main class for creating and handling PythonTableCon
             for i in range(len(contains)):
                 for ii in range(len(contains) - 1):
                     if contains[ii][row_index] < contains[ii + 1][row_index]:
-                            contains[ii], contains[ii + 1] = contains[ii + 1], contains[ii]
+                        contains[ii], contains[ii + 1] = contains[ii + 1], contains[ii]
         else:
             for i in range(len(contains)):
                 for ii in range(len(contains) - 1):

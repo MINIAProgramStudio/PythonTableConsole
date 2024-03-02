@@ -16,6 +16,15 @@ Table = PTC.PythonTableConsole(my_list)
 #### Printing table to the console:
 ```python
 print(Table)
+'''
+result:
+|a|1| 7|
+|b|2| 4|
+|c|3| 3|
+| | | 2|
+| | | 0|
+| | |10|
+'''
 ```
 #### Changing table:
 ```python

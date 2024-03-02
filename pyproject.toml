@@ -9,7 +9,7 @@ name = "PythonTaCo"
 version = "1.3.6"
 description = "Module for creating tables for console applications"
 readme = "README.md"
-authors = [{ name = "Mykhailo Holub", email = "mishataube2005@gmail.com" }]
+authors = [{ name = "Mykhailo Holub", email = "MykhalioHolub@proton.me" }]
 license = { file = "LICENSE" }
 classifiers = [
     "License :: OSI Approved :: MIT License",

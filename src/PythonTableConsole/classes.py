@@ -1,4 +1,4 @@
-# __main__.py
+# classes.py
 # version = 1.3.1
 class PythonTableConsole:  # main class for creating and handling PythonTableConsole
     def __init__(self, contains=[]):  # creates new table with specified content

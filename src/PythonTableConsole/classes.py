@@ -1,5 +1,5 @@
 # classes.py
-# version = 1.3.5
+# version = 1.3.6
 class PythonTableConsole:  # main class for creating and handling PythonTableConsole
     def __init__(self, contains=[]):  # creates new table with specified content
         self.contains = contains  # contains must consist of [[Column0Row0,..., Column0RowN], [Column1Row0,..., Column1RowM],...,[ColumnKRow0,..., ColumnKRowS]]

@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "PythonTaCo"
-version = "1.3.1"
+version = "1.3.2"
 description = "Module for creating tables for console applications"
 readme = "README.md"
 authors = [{ name = "Mykhailo Holub", email = "mishataube2005@gmail.com" }]
@@ -27,7 +27,7 @@ dev = ["bumpver", "pip-tools", "pytest"]
 Homepage = "https://github.com/MINIAProgramStudio/PythonTableConsole"
 
 [tool.bumpver]
-current_version = "1.3.1"
+current_version = "1.3.2"
 version_pattern = "MAJOR.MINOR.PATCH[PYTAGNUM]"
 commit_message = "bump version {old_version} -> {new_version}"
 tag_message = "{new_version}"

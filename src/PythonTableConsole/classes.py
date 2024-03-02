@@ -55,20 +55,23 @@ class PythonTableConsole:  # main class for creating and handling PythonTableCon
                 ii += 1
             i += 1
         if self.options['max_column_width']:
+            i = 0
             if isinstance(self.options['max_column_width'], list):
                 while i < self.width():
                     if self.options['max_column_width'][i]:
-                        column_max_width[i] = max(column_max_width[i], self.options['max_column_width'][i])
+                        column_max_width[i] = min(column_max_width[i], self.options['max_column_width'][i])
+                    i+=1
             else:
                 while i < self.width():
-                    column_max_width[i] = max(column_max_width[i],self.options['max_column_width'])
+                    column_max_width[i] = min(column_max_width[i],self.options['max_column_width'])
+                    i+=1
 
         i = 0
         while i < self.height():
             ii = 0
             while ii < self.width():
                 if len(str(self.contains[ii][i])) > column_max_width[ii]:
-                    out_text += "|" + str(self.contains[ii][i][0:column_max_width])
+                    out_text += "|" + str(self.contains[ii][i][0:column_max_width[ii]])
                 else:
                     out_text += "|" + " " * (column_max_width[ii] - len(str(self.contains[ii][i]))) + str(
                         self.contains[ii][i])

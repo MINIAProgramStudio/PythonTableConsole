@@ -1,6 +1,10 @@
 # classes.py
 # version = 1.3.7
 class PythonTableConsole:  # main class for creating and handling PythonTableConsole
+
+    options = {
+        "max_column_width": 0,  # 0 if infinite, integer othervise
+    }
     def __init__(self, contains=[]):  # creates new table with specified content
         self.contains = contains  # contains must consist of [[Column0Row0,..., Column0RowN], [Column1Row0,..., Column1RowM],...,[ColumnKRow0,..., ColumnKRowS]]
 
@@ -50,12 +54,24 @@ class PythonTableConsole:  # main class for creating and handling PythonTableCon
                     column_max_width[i] = len(str(self.contains[i][ii]))
                 ii += 1
             i += 1
+        if self.options['max_column_width']:
+            if isinstance(self.options['max_column_width'], list):
+                while i < self.width():
+                    if self.options['max_column_width'][i]:
+                        column_max_width[i] = max(column_max_width[i], self.options['max_column_width'][i])
+            else:
+                while i < self.width():
+                    column_max_width[i] = max(column_max_width[i],self.options['max_column_width'])
+
         i = 0
         while i < self.height():
             ii = 0
             while ii < self.width():
-                out_text += "|" + " " * (column_max_width[ii] - len(str(self.contains[ii][i]))) + str(
-                    self.contains[ii][i])
+                if len(str(self.contains[ii][i])) > column_max_width[ii]:
+                    out_text += "|" + str(self.contains[ii][i][0:column_max_width])
+                else:
+                    out_text += "|" + " " * (column_max_width[ii] - len(str(self.contains[ii][i]))) + str(
+                        self.contains[ii][i])
                 ii += 1
             out_text += "|\n"
             i += 1
